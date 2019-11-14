@@ -15,6 +15,7 @@ Some examples for [Λrrow Meta](/arrow-kt/arrow-meta/) the functional companion 
 ### How to run it from command line
 
 ```
+cd helloworld
 ./gradlew clean :use-plugin:shadowJar
 java -jar use-plugin/build/libs/use-plugin-all.jar
 ```
