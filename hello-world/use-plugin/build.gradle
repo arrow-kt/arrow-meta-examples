@@ -15,13 +15,13 @@
  */
 
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.3.50"
-    id "com.github.johnrengelman.shadow" version "5.2.0"
+    id "org.jetbrains.kotlin.jvm" version "$KOTLIN_VERSION"
+    id "com.github.johnrengelman.shadow" version "$SHADOW_JAR_VERSION"
 }
 
 dependencies {
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:1.3.50"
-    compileOnly "io.arrow-kt:arrow-annotations:0.10.3"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+    compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
 
     // To run :create-plugin:shadowJar when building this project
     api project(path: ':create-plugin', configuration: 'shadow')
@@ -29,7 +29,7 @@ dependencies {
 
 compileKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "$JVM_TARGET_VERSION"
         freeCompilerArgs = ["-Xplugin=${project.rootDir}/create-plugin/build/libs/create-plugin-all.jar"]
     }
 }
