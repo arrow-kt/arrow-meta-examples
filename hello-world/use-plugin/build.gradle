@@ -35,6 +35,12 @@ compileKotlin {
     }
 }
 
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
+
 shadowJar {
     configurations = [project.configurations.compileOnly]
 }
