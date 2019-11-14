@@ -27,7 +27,7 @@ dependencies {
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs = ["-Xplugin=${project.rootDir}/../plugin-creation/build/libs/plugin-creation-all.jar"]
+        freeCompilerArgs = ["-Xplugin=${project.rootDir}/../create-plugin/build/libs/create-plugin-all.jar"]
     }
 }
 

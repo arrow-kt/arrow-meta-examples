@@ -22,4 +22,4 @@ jobs:
         ./gradlew clean shadowJar
         cd ../use-plugin
         ./gradlew clean shadowJar
-        java -jar build/libs/plugin-use-all.jar
+        java -jar build/libs/use-plugin-all.jar
