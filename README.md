@@ -1,4 +1,4 @@
-# Λrrow Meta Examples
+# Λrrow Meta examples
 
 [![Build](https://github.com/arrow-kt/test/workflows/Build/badge.svg)](https://github.com/arrow-kt/test/actions?query=workflow%3ABuild)
 
