@@ -1,6 +1,6 @@
 # Λrrow Meta examples
 
-[![Build](https://github.com/arrow-kt/test/workflows/Build/badge.svg)](https://github.com/arrow-kt/test/actions?query=workflow%3ABuild)
+[![Build](https://github.com/arrow-kt/arrow-meta-examples/workflows/Build/badge.svg)](https://github.com/arrow-kt/arrow-meta-examples/actions?query=workflow%3ABuild)
 
 Some examples for [Λrrow Meta](https://github.com/arrow-kt/arrow-meta/) the functional companion to Kotlin's Compiler & IDE.
 
