@@ -18,8 +18,8 @@ jobs:
       env:
         JAVA_OPTS: -Xms512m -Xmx1024m
       run: |
-        cd plugin-creation
+        cd hello-world/create-plugin
         ./gradlew clean shadowJar
-        cd ../plugin-use
+        cd ../use-plugin
         ./gradlew clean shadowJar
         java -jar build/libs/plugin-use-all.jar
