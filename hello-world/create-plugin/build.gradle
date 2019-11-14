@@ -14,23 +14,15 @@
  * limitations under the License.
  */
 
-buildscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50"
-        classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0"
-    }
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.3.50"
+    id "com.github.johnrengelman.shadow" version "5.2.0"
 }
 
-apply plugin: 'kotlin'
-apply plugin: 'com.github.johnrengelman.shadow'
-
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:1.3.50"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:1.3.50"
     compileOnly "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.50"
-    compile "io.arrow-kt:arrow-meta-compiler-plugin:0.10.3-SNAPSHOT"
+    compileOnly "io.arrow-kt:arrow-meta-compiler-plugin:1.3.70-SNAPSHOT"
 }
 
 compileKotlin {
@@ -39,8 +31,13 @@ compileKotlin {
     }
 }
 
+// Create a new JAR with: Arrow Meta + new plugin
 shadowJar {
-    configurations = [project.configurations.compile]
+    configurations = [project.configurations.compileOnly]
+    dependencies {
+        exclude("org.jetbrains.kotlin:kotlin-stdlib")
+        exclude("org.jetbrains.kotlin:kotlin-compiler-embeddable")
+    }
 }
 
 repositories {
