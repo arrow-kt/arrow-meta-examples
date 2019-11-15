@@ -4,7 +4,39 @@
 
 Some examples for [Λrrow Meta](https://github.com/arrow-kt/arrow-meta/) the functional companion to Kotlin's Compiler & IDE.
 
-## Hello World
+## Hello World Compiler Plugin
+
+![Hello World Compiler Plugin Demo](https://github.com/arrow-kt/arrow-meta/raw/master/docs/img/demos/hello-world-compiler-plugin.gif)
+
+The following example shows a Hello World Compiler Plugin.
+The Hello World plugin auto implements the `helloWorld` function by rewriting the Kotlin AST before the compiler proceeds.
+
+```kotlin
+val Meta.helloWorld: Plugin
+  get() =
+    "Hello World" {
+      meta(
+        namedFunction({ name == "helloWorld" }) { c ->
+          Transform.replace(
+            replacing = c,
+            newDeclaration =
+            """|fun helloWorld(): Unit =
+               |  println("Hello ΛRROW Meta!")
+               |""".function.synthetic
+          )
+        }
+      )
+    }
+```
+
+For any user code whose function name is `helloWorld` our compiler plugin will replace the matching function for a
+function that returns Unit and prints our message.
+
+```kotlin:diff
+-fun helloWorld(): Unit = TODO()
++fun helloWorld(): Unit =
++  println("Hello ΛRROW Meta!")
+```
 
 ### How to run it from IDE
 
@@ -19,6 +51,10 @@ cd hello-world
 ./gradlew clean :use-plugin:shadowJar
 java -jar use-plugin/build/libs/use-plugin-all.jar
 ```
+
+## Hello World Compiler + IDE Plugin
+
+Stay tuned!
 
 ## License
 
