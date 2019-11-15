@@ -25,5 +25,5 @@ jobs:
         JAVA_OPTS: -Xms512m -Xmx1024m
       run: |
         cd hello-world
-        ./gradlew clean :use-plugin:shadowJar
+        ./gradlew clean :use-plugin:test :use-plugin:shadowJar
         java -jar use-plugin/build/libs/use-plugin-all.jar
