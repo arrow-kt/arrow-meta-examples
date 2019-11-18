@@ -56,6 +56,22 @@ java -jar use-plugin/build/libs/use-plugin-all.jar
 
 Stay tuned!
 
+## Use of Λrrow Meta Compiler Plugin
+
+Λrrow Meta Compiler Plugin can be used through Λrrow Meta Gradle Plugin.
+
+### How to run it from IDE
+
+1. Create a new project from existing sources: `arrow-meta-compiler-plugin` directory
+2. Build project to run the test
+
+### How to run it from command line
+
+```
+cd arrow-meta-compiler-plugin
+./gradlew clean build
+```
+
 ## License
 
 Copyright (C) 2019 The Λrrow Authors
