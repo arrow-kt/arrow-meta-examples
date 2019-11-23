@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) 2019 The Arrow Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven { 
+            url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+        }
+    }
+    dependencies {
+        classpath "io.arrow-kt:gradle-plugin:$ARROW_META_VERSION"
+    }
+}
+
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "$KOTLIN_VERSION"
+
+    // This option will be possible when there is a version of Arrow Meta Compiler Plugin in Maven Central repository.
+    // Then, "buildscript" and "apply" section won't be necessary.
+    // id "io.arrow-kt.arrow" version $ARROW_META_VERSION
+}
+
+apply plugin: "io.arrow-kt.arrow"
+
+dependencies {
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+    testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+    }
+}
