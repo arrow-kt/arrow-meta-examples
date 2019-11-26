@@ -15,8 +15,8 @@
  */
 
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "$KOTLIN_VERSION"
-    id "com.github.johnrengelman.shadow" version "$SHADOW_JAR_VERSION"
+    id "org.jetbrains.kotlin.jvm"
+    id "com.github.johnrengelman.shadow"
 }
 
 dependencies {
