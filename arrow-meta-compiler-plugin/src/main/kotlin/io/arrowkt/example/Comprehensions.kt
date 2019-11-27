@@ -1,3 +1,5 @@
+package io.arrowkt.example
+
 import kotlin.reflect.KProperty
 
 //metadebug

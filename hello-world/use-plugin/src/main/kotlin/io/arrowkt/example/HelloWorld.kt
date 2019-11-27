@@ -4,6 +4,6 @@ package io.arrowkt.example
 
 fun helloWorld(): Unit = TODO()
 
-fun main(args: Array<String>) {
+fun main() {
   helloWorld()
 }
