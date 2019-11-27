@@ -2,7 +2,6 @@ package io.arrowkt.example
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import test
 
 class ComprehensionsTest {
   @Test
