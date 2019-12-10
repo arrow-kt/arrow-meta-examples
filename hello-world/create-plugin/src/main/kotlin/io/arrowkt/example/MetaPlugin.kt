@@ -5,7 +5,7 @@ import arrow.meta.Plugin
 import arrow.meta.phases.CompilerContext
 import kotlin.contracts.ExperimentalContracts
 
-open class MetaPlugin : Meta {
+class MetaPlugin : Meta {
     @ExperimentalContracts
     override fun intercept(ctx: CompilerContext): List<Plugin> =
         listOf(
