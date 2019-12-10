@@ -29,5 +29,5 @@ jobs:
         ./gradlew clean :use-plugin:test :use-plugin:shadowJar
         java -jar use-plugin/build/libs/use-plugin-all.jar
         echo "Example: use of Arrow Meta Compiler Plugin with Gradle Plugin ..."
-        cd ../arrow-meta-compiler-plugin
+        cd ../use-arrow-meta-compiler-plugin
         ./gradlew clean build
