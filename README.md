@@ -32,10 +32,10 @@ val Meta.helloWorld: Plugin
 For any user code whose function name is `helloWorld` our compiler plugin will replace the matching function for a
 function that returns Unit and prints our message.
 
-```kotlin:diff
--fun helloWorld(): Unit = TODO()
-+fun helloWorld(): Unit =
-+  println("Hello ΛRROW Meta!")
+```diff
+- fun helloWorld(): Unit = TODO()
++ fun helloWorld(): Unit =
++   println("Hello ΛRROW Meta!")
 ```
 
 ### How to run it from IDE
