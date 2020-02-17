@@ -1,2 +1,3 @@
 include ':create-plugin'
 include ':use-plugin'
+include ':ide-plugin'

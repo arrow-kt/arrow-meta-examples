@@ -1,0 +1,15 @@
+<idea-plugin>
+    <id>mygroup.myartifact</id>
+    <name>My Ide Plugin</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <depends>com.intellij.gradle</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <!--missing arrow ide dependency-->
+</idea-plugin>
