@@ -12,7 +12,7 @@ The following example shows a Hello World Compiler Plugin.
 The Hello World plugin auto implements the `helloWorld` function by rewriting the Kotlin AST before the compiler proceeds.
 
 ```kotlin
-val Meta.helloWorld: Plugin
+val Meta.helloWorld: CliPlugin
   get() =
     "Hello World" {
       meta(
