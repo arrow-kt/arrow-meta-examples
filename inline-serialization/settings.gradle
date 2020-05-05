@@ -1,0 +1,5 @@
+include ":inline-serialization"
+include ':inline-serialization-plugin'
+include ':example-library'
+include ':example-application'
+

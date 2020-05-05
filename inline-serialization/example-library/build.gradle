@@ -1,0 +1,37 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+    id "com.github.johnrengelman.shadow"
+    id "kotlinx-serialization"
+}
+
+dependencies {
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+
+    compileOnly "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinx_serialization_runtime_version"
+    compileOnly "org.jetbrains.kotlin:kotlin-reflect:$KOTLIN_VERSION"
+
+    compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
+
+    // To run :inline-serialization-plugin:shadowJar when building this project
+    api project(path: ':inline-serialization-plugin', configuration: 'shadow')
+    api project(":inline-serialization")
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+        freeCompilerArgs = [
+                "-Xplugin=${project.rootDir}/inline-serialization-plugin/build/libs/inline-serialization-plugin-all.jar"
+        ]
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.compileOnly]
+}
