@@ -11,6 +11,9 @@ on:
 jobs:
   build:
 
+    env:
+      JAVA_OPTS: -Xms512m -Xmx1024m
+
     runs-on: ubuntu-latest
 
     steps:
@@ -20,14 +23,16 @@ jobs:
       with:
         java-version: 1.8
         architecture: x64
-    - name: Build
-      env:
-        JAVA_OPTS: -Xms512m -Xmx1024m
+    - name: Hello World Compiler Plugin example
       run: |
-        echo "Example: Hello World ..."
-        cd hello-world
+        cd hello-world/compiler-plugin
         ./gradlew clean :use-plugin:test :use-plugin:shadowJar
         java -jar use-plugin/build/libs/use-plugin-all.jar
-        echo "Example: use of Arrow Meta Compiler Plugin with Gradle Plugin ..."
-        cd ../use-arrow-meta-compiler-plugin
+    - name: Hello World Intellij IDEA Plugin example
+      run: |
+        cd hello-world/ide-plugin
+        ./gradlew clean build
+    - name: Use of Arrow Meta Compiler Plugin with Gradle Plugin
+      run: |
+        cd use-arrow-meta-compiler-plugin
         ./gradlew clean build
