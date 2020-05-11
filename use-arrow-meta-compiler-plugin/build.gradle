@@ -22,7 +22,6 @@ buildscript {
     }
     dependencies {
         classpath "io.arrow-kt:gradle-plugin:$ARROW_META_VERSION"
-        classpath "io.arrow-kt:compiler-plugin:$ARROW_META_VERSION"
     }
 }
 
@@ -31,7 +30,7 @@ plugins {
 
     // This option will be possible when there is a version of Arrow Meta Compiler Plugin in Maven Central repository.
     // Then, "buildscript" and "apply" section won't be necessary.
-    // id "io.arrow-kt.arrow" version $ARROW_META_VERSION
+    // id "io.arrow-kt.arrow" version "$ARROW_META_VERSION"
 }
 
 apply plugin: "io.arrow-kt.arrow"
