@@ -40,14 +40,14 @@ function that returns Unit and prints our message.
 
 ### How to run it from IDE
 
-1. Create a new project from existing sources: `hello-world` directory
+1. Create a new project from existing sources: `hello-world/compiler-plugin` directory
 2. Open `use-plugin/src/main/kotlin/io/arrowkt/example/HelloWorld.kt`
 3. Run `main` function 
 
 ### How to run it from command line
 
 ```
-cd hello-world
+cd hello-world/compiler-plugin
 ./gradlew clean :use-plugin:shadowJar
 java -jar use-plugin/build/libs/use-plugin-all.jar
 ```
