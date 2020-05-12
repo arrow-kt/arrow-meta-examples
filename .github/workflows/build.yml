@@ -26,9 +26,9 @@ jobs:
         cd hello-world/compiler-plugin
         ./gradlew clean :use-plugin:test :use-plugin:shadowJar
         java -jar use-plugin/build/libs/use-plugin-all.jar
-    - name: Hello World Intellij IDEA Plugin example
+    - name: Hello World IDEA Plugin example
       run: |
-        cd hello-world/ide-plugin
+        cd hello-world/idea-plugin
         ./gradlew clean build
     - name: Use of Arrow Meta Compiler Plugin with Gradle Plugin
       run: |
