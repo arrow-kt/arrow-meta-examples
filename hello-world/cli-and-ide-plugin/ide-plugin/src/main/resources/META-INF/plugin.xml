@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>mygroup.myartifact</id>
-    <name>My Ide Plugin</name>
+    <name>My Meta Ide Example</name>
     <vendor email="support@yourlibrary.com" url="http://www.yourlibrary.com">YourLibrary</vendor>
 
     <depends>com.intellij.gradle</depends>
