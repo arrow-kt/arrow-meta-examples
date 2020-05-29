@@ -48,6 +48,10 @@ runIde {
     jvmArgs '-Xmx2G'
 }
 
+configurations.all { // download latest snapshot
+    resolutionStrategy.cacheDynamicVersionsFor 20, 'minutes'
+}
+
 patchPluginXml {
     changeNotes """
       Add change notes here.<br>
