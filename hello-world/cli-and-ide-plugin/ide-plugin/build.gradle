@@ -33,7 +33,7 @@ buildSearchableOptions.enabled = false
 intellij {
     version "$INTELLIJ_IDEA_VERSION"
     pluginName = "Example"
-    plugins = ["gradle", "gradle-java", "java", "org.jetbrains.kotlin:${KOTLIN_IDEA_VERSION}"]
+    plugins = ["gradle", "gradle-java", "java", "org.jetbrains.kotlin:${KOTLIN_IDEA_VERSION}", "io.arrow-kt.arrow:${ARROW_META_VERSION}"]
 }
 
 compileKotlin {
