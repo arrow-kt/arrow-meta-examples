@@ -10,7 +10,9 @@ val Meta.helloWorld: CliPlugin
   get() =
     "Hello World" {
       meta(
-        namedFunction({ name == "helloWorld" }) { c ->
+        namedFunction(
+          ctx = this,
+          match = { name == "helloWorld" }) { c ->
           Transform.replace(
             replacing = c,
             newDeclaration =

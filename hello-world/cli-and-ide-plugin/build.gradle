@@ -1,7 +1,10 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "$KOTLIN_VERSION" apply false
     id "com.github.johnrengelman.shadow" version "$SHADOW_JAR_VERSION" apply false
+    id 'maven-publish'
 }
+
+apply plugin: "org.jetbrains.kotlin.jvm"
 
 allprojects {
     repositories {
@@ -10,4 +13,47 @@ allprojects {
         maven { url 'https://plugins.jetbrains.com/maven' }
         jcenter()
     }
+}
+
+subprojects { project ->
+    apply plugin: 'kotlin'
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+}
+
+task cleanMeta {
+    dependsOn ':compiler-plugin:clean'
+    dependsOn ':ide-plugin:clean'
+}
+
+// run Ide tests
+task publishIdeTestingDependencies {
+    dependsOn ':compiler-plugin:publishToMavenLocal'
+}
+
+task publishMeta {
+    dependsOn ':compiler-plugin:publishToMavenLocal'
+    dependsOn ':ide-plugin:publishToMavenLocal'
+}
+
+task buildMeta {
+    dependsOn ':compiler-plugin:build'
+    dependsOn ':publishIdeTestingDependencies'
+    dependsOn ':ide-plugin:build'
+    tasks.findByPath(':ide-plugin:build').mustRunAfter ':publishIdeTestingDependencies'
+}
+
+task publishAndRunIde {
+    dependsOn ':cleanMeta'
+    dependsOn ':publishMeta'
+    dependsOn ':ide-plugin:runIde'
+    tasks.findByPath(':publishMeta').mustRunAfter ':cleanMeta'
+    tasks.findByPath(':ide-plugin:runIde').mustRunAfter ':publishMeta'
 }

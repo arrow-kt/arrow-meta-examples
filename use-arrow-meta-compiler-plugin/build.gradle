@@ -43,6 +43,7 @@ dependencies {
 compileKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
+        freeCompilerArgs = ["-XXLanguage:+InlineClasses"]
     }
 }
 
