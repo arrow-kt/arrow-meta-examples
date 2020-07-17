@@ -38,7 +38,6 @@ apply plugin: "io.arrow-kt.arrow"
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
 
-    compileOnly "io.arrow-kt:arrow-core-data:$ARROW_VERSION"
     compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
     testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
 }
