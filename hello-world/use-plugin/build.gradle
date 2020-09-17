@@ -47,7 +47,4 @@ jar {
                 "Main-Class": "io.arrowkt.example.HelloWorldKt"
         )
     }
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
 }
