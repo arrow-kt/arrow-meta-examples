@@ -32,7 +32,7 @@ compileKotlin {
 
 // Create a new JAR with: Arrow Meta + new plugin
 task createNewPlugin(type: Jar, dependsOn: classes) {
-    archiveBaseName = "create-plugin-all"
+    archiveClassifier = "all"
     destinationDirectory = file("build/libs/")
     from 'build/classes/kotlin/main'
     from 'build/resources/main'
