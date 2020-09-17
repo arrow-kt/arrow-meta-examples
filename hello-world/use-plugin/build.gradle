@@ -16,16 +16,12 @@
 
 plugins {
     id "org.jetbrains.kotlin.jvm"
-    id "com.github.johnrengelman.shadow"
 }
 
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
     testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
-
-    // To run :create-plugin:shadowJar when building this project
-    api project(path: ':create-plugin', configuration: 'shadow')
 }
 
 compileKotlin {
@@ -41,8 +37,8 @@ compileTestKotlin {
     }
 }
 
-shadowJar {
-    configurations = [project.configurations.compileOnly]
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+    compileTask -> compileTask.dependsOn ":create-plugin:createNewPlugin"
 }
 
 jar {
@@ -50,5 +46,8 @@ jar {
         attributes(
                 "Main-Class": "io.arrowkt.example.HelloWorldKt"
         )
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }

@@ -48,7 +48,7 @@ function that returns Unit and prints our message.
 
 ```
 cd hello-world
-./gradlew clean :use-plugin:shadowJar
+./gradlew clean build
 java -jar use-plugin/build/libs/use-plugin-all.jar
 ```
 
