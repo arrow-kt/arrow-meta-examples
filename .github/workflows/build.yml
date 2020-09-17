@@ -26,8 +26,8 @@ jobs:
       run: |
         echo "Example: Hello World ..."
         cd hello-world
-        ./gradlew clean :use-plugin:test :use-plugin:shadowJar
-        java -jar use-plugin/build/libs/use-plugin-all.jar
+        ./gradlew clean build
+        java -jar use-plugin/build/libs/use-plugin.jar
         echo "Example: use of Arrow Meta Compiler Plugin with Gradle Plugin ..."
         cd ../use-arrow-meta-compiler-plugin
         ./gradlew clean build

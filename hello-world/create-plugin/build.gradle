@@ -16,7 +16,6 @@
 
 plugins {
     id "org.jetbrains.kotlin.jvm"
-    id "com.github.johnrengelman.shadow"
 }
 
 dependencies {
@@ -32,10 +31,11 @@ compileKotlin {
 }
 
 // Create a new JAR with: Arrow Meta + new plugin
-shadowJar {
-    configurations = [project.configurations.compileOnly]
-    dependencies {
-        exclude("org.jetbrains.kotlin:kotlin-stdlib")
-        exclude("org.jetbrains.kotlin:kotlin-compiler-embeddable")
+task createNewPlugin(type: Jar, dependsOn: classes) {
+    archiveClassifier = "all"
+    from 'build/classes/kotlin/main'
+    from 'build/resources/main'
+    from (zipTree(sourceSets.main.compileClasspath.find{ it.absolutePath.contains("io.arrow-kt/compiler-plugin") })) {
+        exclude 'META-INF/services/org.jetbrains.kotlin.compiler.plugin.ComponentRegistrar'
     }
 }
