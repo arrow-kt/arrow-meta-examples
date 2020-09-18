@@ -21,6 +21,17 @@ plugins {
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
+
+    // Depending on the example, it could be necessary to add these dependencies:
+    //
+    //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-script-util:$KOTLIN_VERSION") {
+    //       exclude("org.jetbrains.kotlin", "kotlin-stdlib")
+    //       exclude("org.jetbrains.kotlin", "kotlin-compiler")
+    //       exclude("org.jetbrains.kotlin", "kotlin-compiler-embeddable")
+    //   }
+    //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION")
+    //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$KOTLIN_VERSION")
+
     testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
 }
 

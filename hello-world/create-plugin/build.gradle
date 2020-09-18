@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 /*
  * Copyright (C) 2019 The Arrow Authors
  *
@@ -35,7 +37,11 @@ task createNewPlugin(type: Jar, dependsOn: classes) {
     archiveClassifier = "all"
     from 'build/classes/kotlin/main'
     from 'build/resources/main'
-    from (zipTree(sourceSets.main.compileClasspath.find{ it.absolutePath.contains("io.arrow-kt/compiler-plugin") })) {
+    from (
+       zipTree(sourceSets.main.compileClasspath.find {
+           it.absolutePath.contains(Paths.get("io.arrow-kt","compiler-plugin").toString())
+       })
+    ) {
         exclude 'META-INF/services/org.jetbrains.kotlin.compiler.plugin.ComponentRegistrar'
     }
 }
