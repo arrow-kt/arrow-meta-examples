@@ -24,9 +24,9 @@ jobs:
     - name: Hello World Compiler Plugin example
       run: |
         cd hello-world/compiler-plugin
-        ./gradlew clean :use-plugin:test :use-plugin:shadowJar
-        java -jar use-plugin/build/libs/use-plugin-all.jar
-    - name: Hello World IDEA Plugin example
+        ./gradlew clean build
+        java -jar use-plugin/build/libs/use-plugin.jar
+    - name: Hello World Intellij IDEA Plugin example
       run: |
         cd hello-world/cli-and-ide-plugin
         ./gradlew clean build

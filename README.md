@@ -16,7 +16,7 @@ val Meta.helloWorld: CliPlugin
   get() =
     "Hello World" {
       meta(
-        namedFunction({ name == "helloWorld" }) { c ->
+        namedFunction(this, { name == "helloWorld" }) { c ->
           Transform.replace(
             replacing = c,
             newDeclaration =
@@ -48,8 +48,8 @@ function that returns Unit and prints our message.
 
 ```
 cd hello-world/compiler-plugin
-./gradlew clean :use-plugin:shadowJar
-java -jar use-plugin/build/libs/use-plugin-all.jar
+./gradlew clean build
+java -jar use-plugin/build/libs/use-plugin.jar
 ```
 
 ## Hello World Compiler + IDE Plugin
