@@ -23,6 +23,12 @@ dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compileOnly "com.intellij:openapi:$OPENAPI_VERSION"
     compileOnly "io.arrow-kt:compiler-plugin:$ARROW_META_VERSION"
+    compileOnly "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$KOTLIN_VERSION"
+    compileOnly("org.jetbrains.kotlin:kotlin-script-util:$KOTLIN_VERSION") {
+        exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib"
+        exclude group: "org.jetbrains.kotlin", module: "kotlin-compiler"
+        exclude group: "org.jetbrains.kotlin", module: "kotlin-compiler-embeddable"
+    }
 }
 
 compileKotlin {
@@ -35,4 +41,15 @@ compileKotlin {
 shadowJar {
     configurations = [project.configurations.compileOnly]
     relocate 'org.jetbrains.kotlin.com.intellij', 'com.intellij'
+    dependencies {
+        exclude(dependency('org.jetbrains.kotlin:kotlin-stdlib'))
+        // and its transitive dependencies:
+        exclude(dependency('org.jetbrains.kotlin:kotlin-stdlib-common'))
+        exclude(dependency('org.jetbrains:annotations'))
+
+        exclude(dependency('com.intellij:openapi'))
+        // and its transitive dependencies:
+        exclude(dependency('com.intellij:extensions'))
+        exclude(dependency('com.intellij:annotations'))
+    }
 }

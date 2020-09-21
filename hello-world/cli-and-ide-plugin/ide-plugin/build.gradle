@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 plugins {
     id "org.jetbrains.kotlin.jvm"
     id "org.jetbrains.intellij" version "$INTELLIJ_GRADLE_PLUGIN_VERSION"
@@ -34,6 +33,11 @@ intellij {
     version "$INTELLIJ_IDEA_VERSION"
     pluginName = "Example"
     plugins = ["gradle", "gradle-java", "java", "org.jetbrains.kotlin:${KOTLIN_IDEA_VERSION}", "io.arrow-kt.arrow:${ARROW_META_VERSION}"]
+    pluginsRepo = 'https://plugins.jetbrains.com/maven'
+    /*pluginsRepo {
+        custom("https://meta.arrow-kt.io/idea-plugin/latest-snapshot/updatePlugins.xml")
+        maven('https://plugins.jetbrains.com/maven')
+    }*/
 }
 
 compileKotlin {
