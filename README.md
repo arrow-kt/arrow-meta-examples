@@ -49,7 +49,7 @@ function that returns Unit and prints our message.
 ```
 cd hello-world
 ./gradlew clean build
-java -jar use-plugin/build/libs/use-plugin-all.jar
+java -jar use-plugin/build/libs/use-plugin.jar
 ```
 
 ## Hello World Compiler + IDE Plugin
