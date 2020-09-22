@@ -29,5 +29,5 @@ jobs:
         java -jar use-plugin/build/libs/use-plugin.jar
     - name: "Build example: use of Arrow Meta Compiler Plugin with Gradle Plugin"
       run: |
-        cd ../use-arrow-meta-compiler-plugin
+        cd use-arrow-meta-compiler-plugin
         ./gradlew clean build
