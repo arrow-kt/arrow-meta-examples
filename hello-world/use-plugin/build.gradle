@@ -16,16 +16,23 @@
 
 plugins {
     id "org.jetbrains.kotlin.jvm"
-    id "com.github.johnrengelman.shadow"
 }
 
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
-    testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
 
-    // To run :create-plugin:shadowJar when building this project
-    api project(path: ':create-plugin', configuration: 'shadow')
+    // Depending on the example, it could be necessary to add these dependencies:
+    //
+    //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-script-util:$KOTLIN_VERSION") {
+    //       exclude("org.jetbrains.kotlin", "kotlin-stdlib")
+    //       exclude("org.jetbrains.kotlin", "kotlin-compiler")
+    //       exclude("org.jetbrains.kotlin", "kotlin-compiler-embeddable")
+    //   }
+    //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION")
+    //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$KOTLIN_VERSION")
+
+    testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
 }
 
 compileKotlin {
@@ -41,8 +48,8 @@ compileTestKotlin {
     }
 }
 
-shadowJar {
-    configurations = [project.configurations.compileOnly]
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+    compileTask -> compileTask.dependsOn ":create-plugin:createNewPlugin"
 }
 
 jar {

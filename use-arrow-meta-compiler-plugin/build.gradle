@@ -37,6 +37,8 @@ apply plugin: "io.arrow-kt.arrow"
 
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+
+    compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
     testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
 }
 
@@ -49,6 +51,7 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
+        freeCompilerArgs = ["-Xallow-jvm-ir-dependencies"]
     }
 }
 
