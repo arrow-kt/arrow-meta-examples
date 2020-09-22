@@ -11,7 +11,9 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest      
+    env:
+        JAVA_OPTS: -Xms512m -Xmx1024m
 
     steps:
     - uses: actions/checkout@v1
@@ -20,14 +22,12 @@ jobs:
       with:
         java-version: 1.8
         architecture: x64
-    - name: Build
-      env:
-        JAVA_OPTS: -Xms512m -Xmx1024m
+    - name: "Build example: Hello World"
       run: |
-        echo "Example: Hello World ..."
         cd hello-world
         ./gradlew clean build
         java -jar use-plugin/build/libs/use-plugin.jar
-        echo "Example: use of Arrow Meta Compiler Plugin with Gradle Plugin ..."
+    - name: "Build example: use of Arrow Meta Compiler Plugin with Gradle Plugin"
+      run: |
         cd ../use-arrow-meta-compiler-plugin
         ./gradlew clean build
