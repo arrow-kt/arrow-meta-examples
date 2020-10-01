@@ -1,8 +1,11 @@
 // TODO: It doesn't support a composite package
 package singlepackage
 
-import arrow.*
+import arrow.Given
 
 fun <A> given(evidence: @Given A = arrow.given): A = evidence
-@Given val x = "yes!"
+
+@Given
+internal val x: String = "yes!"
+
 val result = given<String>()
