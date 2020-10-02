@@ -19,15 +19,14 @@ plugins {
 }
 
 dependencies {
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
 
     // Depending on the example, it could be necessary to add these dependencies:
     //
     //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-script-util:$KOTLIN_VERSION") {
-    //       exclude("org.jetbrains.kotlin", "kotlin-stdlib")
-    //       exclude("org.jetbrains.kotlin", "kotlin-compiler")
-    //       exclude("org.jetbrains.kotlin", "kotlin-compiler-embeddable")
+    //       exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib"
+    //       exclude group: "org.jetbrains.kotlin", module: "kotlin-compiler"
+    //       exclude group: "org.jetbrains.kotlin", module: "kotlin-compiler-embeddable"
     //   }
     //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION")
     //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$KOTLIN_VERSION")
@@ -38,7 +37,7 @@ dependencies {
 compileKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
-        freeCompilerArgs = ["-Xplugin=${project.rootDir}/create-plugin/build/libs/create-plugin-all.jar"]
+        freeCompilerArgs = ["-Xplugin=${rootDir}/create-plugin/build/libs/create-plugin.jar"]
     }
 }
 
@@ -49,7 +48,7 @@ compileTestKotlin {
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
-    compileTask -> compileTask.dependsOn ":create-plugin:createNewPlugin"
+    compileTask -> compileTask.dependsOn ":create-plugin:assemble"
 }
 
 jar {
