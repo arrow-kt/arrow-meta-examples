@@ -32,11 +32,8 @@ compileKotlin {
     }
 }
 
-// Create a new JAR with: Arrow Meta + new plugin
-task createNewPlugin(type: Jar, dependsOn: classes) {
-    archiveClassifier = "all"
-    from 'build/classes/kotlin/main'
-    from 'build/resources/main'
+// Add new content to the default jar artifact: Arrow Meta Compiler Plugin except META-INF file to use the new one
+jar {
     from (
        zipTree(sourceSets.main.compileClasspath.find {
            it.absolutePath.contains(Paths.get("io.arrow-kt","compiler-plugin").toString())
