@@ -35,7 +35,7 @@ compileKotlin {
 jar {
     from (
        zipTree(sourceSets.main.compileClasspath.find {
-           it.absolutePath.contains(Paths.get("io.arrow-kt","compiler-plugin").toString())
+           it.absolutePath.contains(Paths.get("arrow-kt","compiler-plugin").toString())
        })
     ) {
         exclude 'META-INF/services/org.jetbrains.kotlin.compiler.plugin.ComponentRegistrar'
