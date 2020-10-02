@@ -19,7 +19,6 @@ plugins {
 }
 
 dependencies {
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compileOnly "io.arrow-kt:arrow-annotations:$ARROW_VERSION"
 
     // Depending on the example, it could be necessary to add these dependencies:
