@@ -39,7 +39,11 @@ dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
 
     compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
-    testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
+    testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
+}
+
+test {
+    useJUnitPlatform()
 }
 
 compileKotlin {
