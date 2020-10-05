@@ -3,7 +3,7 @@ package io.arrowkt.example
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions.assertThat
 
 class HelloWorldTest {
   @Test
@@ -11,6 +11,6 @@ class HelloWorldTest {
       val out = ByteArrayOutputStream()
       System.setOut(PrintStream(out))
       helloWorld()
-      Assertions.assertEquals(out.toString(), "Hello ΛRROW Meta!\n")
+      assertThat(out.toString()).isEqualTo("Hello ΛRROW Meta!\n")
   }
 }

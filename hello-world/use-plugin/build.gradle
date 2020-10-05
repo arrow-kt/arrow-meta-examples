@@ -32,6 +32,9 @@ dependencies {
     //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$KOTLIN_VERSION")
 
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
+    testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
+
+
 }
 
 compileKotlin {

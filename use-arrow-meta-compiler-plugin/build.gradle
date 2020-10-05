@@ -40,6 +40,7 @@ dependencies {
 
     compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
+    testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
 }
 
 test {

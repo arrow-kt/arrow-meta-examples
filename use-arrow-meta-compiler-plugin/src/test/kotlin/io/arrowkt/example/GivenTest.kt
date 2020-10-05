@@ -2,12 +2,12 @@
 package singlepackage
 
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions.assertThat
 
 class GivenTest {
 
     @Test
     fun `coherent polymorphic identity`() {
-        Assertions.assertTrue(result == "yes!")
+        assertThat(result).isEqualTo("yes!")
     }
 }
