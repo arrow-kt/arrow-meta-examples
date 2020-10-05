@@ -31,7 +31,10 @@ dependencies {
     //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION")
     //   kotlinCompilerClasspath("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$KOTLIN_VERSION")
 
-    testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
+    testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
+    testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
+
+
 }
 
 compileKotlin {
@@ -45,6 +48,10 @@ compileTestKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
     }
+}
+
+test {
+    useJUnitPlatform()
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
