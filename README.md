@@ -6,7 +6,7 @@ Some examples for [Λrrow Meta](https://github.com/arrow-kt/arrow-meta/) the fun
 
 ## Hello World Compiler Plugin
 
-![Hello World Compiler Plugin Demo](https://github.com/arrow-kt/arrow-meta/raw/master/docs/img/demos/hello-world-compiler-plugin.gif)
+![Hello World Compiler Plugin Demo](https://github.com/arrow-kt/arrow-meta/raw/master/docs/docs/img/demos/hello-world-compiler-plugin.gif)
 
 The following example shows a Hello World Compiler Plugin.
 The Hello World plugin auto implements the `helloWorld` function by rewriting the Kotlin AST before the compiler proceeds.
