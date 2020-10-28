@@ -18,11 +18,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: "Build example: Hello World"
+      working-directory: hello-world
       run: |
-        cd hello-world
         ./gradlew clean build
         java -jar use-plugin/build/libs/use-plugin.jar
     - name: "Build example: use of Arrow Meta Compiler Plugin with Gradle Plugin"
-      run: |
-        cd use-arrow-meta-compiler-plugin
-        ./gradlew clean build
+      working-directory: use-arrow-meta-compiler-plugin
+      run: ./gradlew clean build
+    - name: "Build example: create new plugin to generate sources"
+      working-directory: generate-sources
+      run: ./gradlew clean build
