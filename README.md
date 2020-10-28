@@ -72,6 +72,10 @@ cd use-arrow-meta-compiler-plugin
 ./gradlew clean build
 ```
 
+## Other examples
+
+* Create a new plugin to generate sources: `generate-sources` directory
+
 ## License
 
 Copyright (C) 2019 The Λrrow Authors
