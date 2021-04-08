@@ -17,7 +17,7 @@
 buildscript {
     repositories {
         maven { 
-            url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }
     }
     dependencies {
@@ -63,6 +63,6 @@ compileTestKotlin {
 repositories {
     mavenCentral()
     maven {
-        url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
 }
