@@ -56,7 +56,6 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
-        freeCompilerArgs = ["-Xallow-jvm-ir-dependencies"]
     }
 }
 
