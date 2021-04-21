@@ -17,7 +17,7 @@
 buildscript {
     repositories {
         maven { 
-            url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }
     }
     dependencies {
@@ -39,7 +39,12 @@ dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
 
     compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
-    testImplementation "io.kotlintest:kotlintest-runner-junit4:$KOTLIN_TEST_VERSION"
+    testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
+    testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
+}
+
+test {
+    useJUnitPlatform()
 }
 
 compileKotlin {
@@ -51,13 +56,12 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
-        freeCompilerArgs = ["-Xallow-jvm-ir-dependencies"]
     }
 }
 
 repositories {
     mavenCentral()
     maven {
-        url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
 }

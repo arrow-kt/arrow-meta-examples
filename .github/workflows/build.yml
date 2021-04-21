@@ -1,12 +1,6 @@
 name: Build
 
-on:
-  push:
-    branches:
-    - master
-  pull_request:
-    branches:
-    - master
+on: pull_request
 
 jobs:
   build:
@@ -16,13 +10,19 @@ jobs:
         JAVA_OPTS: -Xms512m -Xmx1024m
 
     steps:
+    - name: "Set env"
+      run: |
+        echo "$JAVA_HOME_8_X64/bin" >> $GITHUB_PATH
+        echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $GITHUB_ENV
     - uses: actions/checkout@v2
     - name: "Build example: Hello World"
+      working-directory: hello-world
       run: |
-        cd hello-world
         ./gradlew clean build
         java -jar use-plugin/build/libs/use-plugin.jar
     - name: "Build example: use of Arrow Meta Compiler Plugin with Gradle Plugin"
-      run: |
-        cd use-arrow-meta-compiler-plugin
-        ./gradlew clean build
+      working-directory: use-arrow-meta-compiler-plugin
+      run: ./gradlew clean build
+    - name: "Build example: create new plugin to generate sources"
+      working-directory: generate-sources
+      run: ./gradlew clean build

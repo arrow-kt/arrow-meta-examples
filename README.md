@@ -6,7 +6,7 @@ Some examples for [Λrrow Meta](https://github.com/arrow-kt/arrow-meta/) the fun
 
 ## Hello World Compiler Plugin
 
-![Hello World Compiler Plugin Demo](https://github.com/arrow-kt/arrow-meta/raw/master/docs/img/demos/hello-world-compiler-plugin.gif)
+![Hello World Compiler Plugin Demo](https://github.com/arrow-kt/arrow-meta/raw/main/docs/docs/img/demos/hello-world-compiler-plugin.gif)
 
 The following example shows a Hello World Compiler Plugin.
 The Hello World plugin auto implements the `helloWorld` function by rewriting the Kotlin AST before the compiler proceeds.
@@ -16,13 +16,13 @@ val Meta.helloWorld: CliPlugin
   get() =
     "Hello World" {
       meta(
-        namedFunction(this, { name == "helloWorld" }) { c ->
+        namedFunction(this, { element.name == "helloWorld" }) { (c, _) ->
           Transform.replace(
             replacing = c,
             newDeclaration =
             """|fun helloWorld(): Unit =
                |  println("Hello ΛRROW Meta!")
-               |""".function.synthetic
+               |""".function(descriptor).syntheticScope
           )
         }
       )
@@ -49,7 +49,7 @@ function that returns Unit and prints our message.
 ```
 cd hello-world
 ./gradlew clean build
-java -jar use-plugin/build/libs/use-plugin-all.jar
+java -jar use-plugin/build/libs/use-plugin.jar
 ```
 
 ## Hello World Compiler + IDE Plugin
@@ -71,6 +71,10 @@ Stay tuned!
 cd use-arrow-meta-compiler-plugin
 ./gradlew clean build
 ```
+
+## Other examples
+
+* Create a new plugin to generate sources: `generate-sources` directory
 
 ## License
 

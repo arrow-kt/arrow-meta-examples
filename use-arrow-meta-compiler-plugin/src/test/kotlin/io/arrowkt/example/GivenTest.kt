@@ -1,13 +1,13 @@
 // TODO: It doesn't support a composite package
 package singlepackage
 
-import arrow.*
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import org.assertj.core.api.Assertions.assertThat
 
 class GivenTest {
 
     @Test
     fun `coherent polymorphic identity`() {
-        assert(result == "yes!")
+        assertThat(result).isEqualTo("yes!")
     }
 }

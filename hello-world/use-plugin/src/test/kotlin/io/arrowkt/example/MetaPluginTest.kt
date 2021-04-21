@@ -1,10 +1,9 @@
 package io.arrowkt.example
 
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.core.IsEqual.equalTo
-import org.junit.Test
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
+import org.junit.jupiter.api.Test
+import org.assertj.core.api.Assertions.assertThat
 
 class HelloWorldTest {
   @Test
@@ -12,6 +11,6 @@ class HelloWorldTest {
       val out = ByteArrayOutputStream()
       System.setOut(PrintStream(out))
       helloWorld()
-      assertThat(out.toString(), equalTo("Hello ΛRROW Meta!\n"))
+      assertThat(out.toString()).isEqualTo("Hello ΛRROW Meta!\n")
   }
 }
