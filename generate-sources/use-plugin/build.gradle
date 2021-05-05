@@ -14,15 +14,32 @@
  * limitations under the License.
  */
 
+buildscript {
+    repositories {
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath "io.arrow-kt:gradle-plugin:$ARROW_META_VERSION"
+    }
+}
+
 plugins {
     id "org.jetbrains.kotlin.jvm"
+}
+
+apply plugin: "io.arrow-kt.arrow"
+
+arrowMeta.plugins = ["${rootDir}/new-plugin/build/libs/new-plugin.jar".toString()]
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
 }
 
 compileKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
-        freeCompilerArgs = ["-Xplugin=${rootDir}/create-plugin/build/libs/create-plugin.jar",
-        "-P", "plugin:arrow.meta.plugin.compiler:generatedSrcOutputDir=${buildDir}"]
     }
 }
 
@@ -32,6 +49,10 @@ compileTestKotlin {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
-    compileTask -> compileTask.dependsOn ":create-plugin:assemble"
+    compileTask -> compileTask.dependsOn ":new-plugin:assemble"
 }

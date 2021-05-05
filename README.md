@@ -52,23 +52,19 @@ cd hello-world
 java -jar use-plugin/build/libs/use-plugin.jar
 ```
 
-## Hello World Compiler + IDE Plugin
-
-Stay tuned!
-
 ## Use of Λrrow Meta Compiler Plugin
 
 Λrrow Meta Compiler Plugin can be used through Λrrow Meta Gradle Plugin.
 
 ### How to run it from IDE
 
-1. Create a new project from existing sources: `use-arrow-meta-compiler-plugin` directory
+1. Create a new project from existing sources: `use-arrow-meta-compiler-plugins` directory
 2. Build project to run the test
 
 ### How to run it from command line
 
 ```
-cd use-arrow-meta-compiler-plugin
+cd use-arrow-meta-compiler-plugins
 ./gradlew clean build
 ```
 

@@ -26,15 +26,15 @@ val Meta.transformNewSources: CliPlugin
       classDeclaration(this, { name == "NewMultipleSource" }) {
         Transform.newSources(
           """
-            package arrow
-
-            class ${name}_Generated
-          """.file("${name}_Generated"), // default path: generated/source/kapt/main
+          |package arrow
+          |         
+          |class ${name}_Generated
+          """.trimMargin().file("${name}_Generated"), // default path: generated/source/kapt/main
           """
-            package arrow
-
-            class ${name}_Generated_2
-          """.file("${name}_Generated_2", "generated/custom/directory")
+          |package arrow
+          |
+          |class ${name}_Generated_2
+          """.trimMargin().file("${name}_Generated_2", "generated/custom/directory")
         )
       }
     )

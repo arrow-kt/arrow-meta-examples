@@ -22,22 +22,11 @@ plugins {
 
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION"
-    compileOnly "io.arrow-kt:compiler-plugin:$ARROW_META_VERSION"
+    compileOnly "io.arrow-kt:compiler-plugin-core:$ARROW_META_VERSION"
 }
 
 compileKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
-    }
-}
-
-// Add new content to the default jar artifact: Arrow Meta Compiler Plugin except META-INF file to use the new one
-jar {
-    from (
-       zipTree(sourceSets.main.compileClasspath.find {
-           it.absolutePath.contains(Paths.get("arrow-kt","compiler-plugin").toString())
-       })
-    ) {
-        exclude 'META-INF/services/org.jetbrains.kotlin.compiler.plugin.ComponentRegistrar'
     }
 }
