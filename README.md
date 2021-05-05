@@ -52,10 +52,6 @@ cd hello-world
 java -jar use-plugin/build/libs/use-plugin.jar
 ```
 
-## Hello World Compiler + IDE Plugin
-
-Stay tuned!
-
 ## Use of Λrrow Meta Compiler Plugin
 
 Λrrow Meta Compiler Plugin can be used through Λrrow Meta Gradle Plugin.
