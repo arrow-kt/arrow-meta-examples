@@ -16,7 +16,7 @@
 
 buildscript {
     repositories {
-        maven { 
+        maven {
             url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }
     }
@@ -35,16 +35,14 @@ plugins {
 
 apply plugin: "io.arrow-kt.arrow"
 
+arrowMeta.plugins = ['proofs', "${rootDir}/../hello-world/new-plugin/build/libs/new-plugin.jar".toString()]
+
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
 
     compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
     testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
-}
-
-test {
-    useJUnitPlatform()
 }
 
 compileKotlin {
@@ -57,6 +55,19 @@ compileTestKotlin {
     kotlinOptions {
         jvmTarget = "$JVM_TARGET_VERSION"
     }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+    compileTask -> compileTask.dependsOn ":createMetaPlugin"
+}
+
+task createMetaPlugin(type:GradleBuild) {
+    dir file("$rootDir/../hello-world")
+    tasks = [':new-plugin:assemble']
 }
 
 repositories {

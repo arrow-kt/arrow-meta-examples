@@ -21,7 +21,7 @@ jobs:
         ./gradlew clean build
         java -jar use-plugin/build/libs/use-plugin.jar
     - name: "Build example: use of Arrow Meta Compiler Plugin with Gradle Plugin"
-      working-directory: use-arrow-meta-compiler-plugin
+      working-directory: use-arrow-meta-compiler-plugins
       run: ./gradlew clean build
     - name: "Build example: create new plugin to generate sources"
       working-directory: generate-sources

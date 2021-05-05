@@ -62,13 +62,13 @@ Stay tuned!
 
 ### How to run it from IDE
 
-1. Create a new project from existing sources: `use-arrow-meta-compiler-plugin` directory
+1. Create a new project from existing sources: `use-arrow-meta-compiler-plugins` directory
 2. Build project to run the test
 
 ### How to run it from command line
 
 ```
-cd use-arrow-meta-compiler-plugin
+cd use-arrow-meta-compiler-plugins
 ./gradlew clean build
 ```
 
