@@ -23,7 +23,7 @@ import arrow.meta.quotes.classDeclaration
 val Meta.transformNewSources: CliPlugin
   get() = "Transform New Multiple Source" {
     meta(
-      classDeclaration(this, { name == "NewMultipleSource" }) {
+      classDeclaration(this, { element.name == "NewMultipleSource" }) {
         Transform.newSources(
           """
           |package arrow
