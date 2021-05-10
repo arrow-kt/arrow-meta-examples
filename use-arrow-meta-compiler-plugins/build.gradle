@@ -40,7 +40,6 @@ arrowMeta.plugins = ['proofs', "${rootDir}/../hello-world/new-plugin/build/libs/
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
 
-    compileOnly "io.arrow-kt:arrow-meta-prelude:$ARROW_META_VERSION"
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
     testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
 }
