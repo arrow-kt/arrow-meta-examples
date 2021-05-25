@@ -1,0 +1,4 @@
+include ":optics-compiler-plugin-demo"
+include ":refined-types-compiler-plugin-demo"
+
+include ":refined-types-library-demo"
