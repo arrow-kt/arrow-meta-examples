@@ -4,73 +4,23 @@
 
 Some examples for [Λrrow Meta](https://github.com/arrow-kt/arrow-meta/) the functional companion to Kotlin's Compiler & IDE.
 
-## Hello World Compiler Plugin
-
-![Hello World Compiler Plugin Demo](https://github.com/arrow-kt/arrow-meta/raw/main/docs/docs/img/demos/hello-world-compiler-plugin.gif)
-
-The following example shows a Hello World Compiler Plugin.
-The Hello World plugin auto implements the `helloWorld` function by rewriting the Kotlin AST before the compiler proceeds.
-
-```kotlin
-val Meta.helloWorld: CliPlugin
-  get() =
-    "Hello World" {
-      meta(
-        namedFunction(this, { element.name == "helloWorld" }) { (c, _) ->
-          Transform.replace(
-            replacing = c,
-            newDeclaration =
-            """|fun helloWorld(): Unit =
-               |  println("Hello ΛRROW Meta!")
-               |""".function(descriptor).syntheticScope
-          )
-        }
-      )
-    }
-```
-
-For any user code whose function name is `helloWorld` our compiler plugin will replace the matching function for a
-function that returns Unit and prints our message.
-
-```diff
-- fun helloWorld(): Unit = TODO()
-+ fun helloWorld(): Unit =
-+   println("Hello ΛRROW Meta!")
-```
+## Use of Compiler Plugins created with Arrow Meta
 
 ### How to run it from IDE
 
-1. Create a new project from existing sources: `hello-world` directory
-2. Open `use-plugin/src/main/kotlin/io/arrowkt/example/HelloWorld.kt`
-3. Run `main` function 
+1. Create a new project from existing sources: `demos` directory
+2. Build root project
 
 ### How to run it from command line
 
 ```
-cd hello-world
-./gradlew clean build
-java -jar use-plugin/build/libs/use-plugin.jar
-```
-
-## Use of Λrrow Meta Compiler Plugin
-
-Λrrow Meta Compiler Plugin can be used through Λrrow Meta Gradle Plugin.
-
-### How to run it from IDE
-
-1. Create a new project from existing sources: `use-arrow-meta-compiler-plugins` directory
-2. Build project to run the test
-
-### How to run it from command line
-
-```
-cd use-arrow-meta-compiler-plugins
+cd demos
 ./gradlew clean build
 ```
 
-## Other examples
+## Use of Λrrow Meta to create other Compiler Plugins
 
-* Create a new plugin to generate sources: `generate-sources` directory
+* Create a new compiler plugin to generate sources: `generate-sources` directory
 
 ## License
 

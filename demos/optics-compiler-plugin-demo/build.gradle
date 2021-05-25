@@ -1,0 +1,47 @@
+/*
+ * Copyright (C) 2019 The Arrow Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+buildscript {
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
+    dependencies {
+        classpath "io.arrow-kt:arrow-optics-gradle-plugin:$ARROW_META_VERSION"
+    }
+}
+
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+
+    // This option will be possible when there is a release version of Arrow Refined Types Gradle Plugin
+    // in Gradle Plugins Portal. Then, "buildscript" and "apply" section won't be necessary.
+    // id "io.arrow-kt.optics" version "$ARROW_META_VERSION"
+}
+
+apply plugin: "io.arrow-kt.optics"
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT_VERSION"
+    testImplementation "org.assertj:assertj-core:$ASSERTJ_VERSION"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat 'full'
+        events "passed", "failed", "standardOut", "standardError"
+    }
+}

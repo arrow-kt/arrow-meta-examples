@@ -15,14 +15,17 @@ jobs:
         echo "$JAVA_HOME_8_X64/bin" >> $GITHUB_PATH
         echo "JAVA_HOME=$JAVA_HOME_8_X64" >> $GITHUB_ENV
     - uses: actions/checkout@v2
-    - name: "Build example: Hello World"
-      working-directory: hello-world
+    - name: "Refined Types compile demo"
+      working-directory: demos
       run: |
-        ./gradlew clean build
-        java -jar use-plugin/build/libs/use-plugin.jar
-    - name: "Build example: use of Arrow Meta Compiler Plugin with Gradle Plugin"
-      working-directory: use-arrow-meta-compiler-plugins
-      run: ./gradlew clean build
-    - name: "Build example: create new plugin to generate sources"
+        ./gradlew :refined-types-compiler-plugin-demo:assemble 2> error.log || echo "Compilation failed as expected!"
+        grep -e "-1 should be even" error.log
+    - name: "Refined Types runtime demo"
+      working-directory: demos
+      run: ./gradlew :refined-types-library-demo:build
+    - name: "Optics Compiler Plugin demo"
+      working-directory: demos
+      run: ./gradlew :optics-compiler-plugin-demo:build
+    - name: "Create new plugin to generate sources"
       working-directory: generate-sources
       run: ./gradlew clean build

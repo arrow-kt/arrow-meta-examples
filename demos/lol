@@ -1,0 +1,373 @@
+
+> Task :optics-compiler-plugin-demo:dependencies
+
+------------------------------------------------------------
+Project ':optics-compiler-plugin-demo'
+------------------------------------------------------------
+
+annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+No dependencies
+
+api - API dependencies for compilation 'main' (target  (jvm)). (n)
+No dependencies
+
+apiDependenciesMetadata
+\--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+     |    +--- org.jetbrains:annotations:13.0
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+          \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+
+apiElements - API elements for main. (n)
+No dependencies
+
+apiElements-published (n)
+No dependencies
+
+archives - Configuration for archive artifacts. (n)
+No dependencies
+
+compileClasspath - Compile classpath for compilation 'main' (target  (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+|    |    +--- org.jetbrains:annotations:13.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT
++--- io.arrow-kt:arrow-core-data:0.11.0
+|    +--- io.arrow-kt:arrow-annotations:0.11.0
+|    |    +--- io.kindedj:kindedj:1.1.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+\--- io.arrow-kt:arrow-optics:0.11.0
+     +--- io.arrow-kt:arrow-core:0.11.0
+     |    +--- io.arrow-kt:arrow-core-data:0.11.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+
+compileOnly - Compile only dependencies for compilation 'main' (target  (jvm)). (n)
+No dependencies
+
+compileOnlyDependenciesMetadata
+No dependencies
+
+default - Configuration for default artifacts. (n)
+No dependencies
+
+implementation - Implementation only dependencies for compilation 'main' (target  (jvm)). (n)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT (n)
++--- io.arrow-kt:arrow-core-data:0.11.0 (n)
+\--- io.arrow-kt:arrow-optics:0.11.0 (n)
+
+implementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+|    |    +--- org.jetbrains:annotations:13.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT
++--- io.arrow-kt:arrow-core-data:0.11.0
+|    +--- io.arrow-kt:arrow-annotations:0.11.0
+|    |    +--- io.kindedj:kindedj:1.1.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+\--- io.arrow-kt:arrow-optics:0.11.0
+     +--- io.arrow-kt:arrow-core:0.11.0
+     |    +--- io.arrow-kt:arrow-core-data:0.11.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+
+kotlinCompilerClasspath
+\--- io.arrow-kt:arrow-meta:1.5.0-SNAPSHOT
+     +--- org.javassist:javassist:3.27.0-GA
+     +--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-scripting-common:1.5.0
+     |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+     |    |    |    |    +--- org.jetbrains:annotations:13.0
+     |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+     |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8
+     |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.71 -> 1.5.0 (*)
+     |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.71 -> 1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.5.0
+     |    |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.5.0
+     |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     |    |    |    \--- org.jetbrains.kotlin:kotlin-scripting-common:1.5.0 (*)
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     +--- org.jetbrains.kotlin:kotlin-script-util:1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.5.0 (*)
+     |    +--- org.jetbrains.intellij.deps:trove4j:1.0.20181211
+     |    \--- org.jetbrains.kotlin:kotlin-daemon-client:1.5.0
+     |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8 (*)
+     |         \--- org.jetbrains.kotlin:kotlin-reflect:1.5.0
+     |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     \--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.0
+          +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+          +--- org.jetbrains.kotlin:kotlin-script-runtime:1.5.0
+          +--- org.jetbrains.kotlin:kotlin-reflect:1.5.0 (*)
+          +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.5.0
+          \--- org.jetbrains.intellij.deps:trove4j:1.0.20181211
+
+kotlinCompilerPluginClasspath
+No dependencies
+
+kotlinCompilerPluginClasspathMain - Kotlin compiler plugins for compilation 'main' (target  (jvm))
+\--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.5.0
+     +--- org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-common:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+     |    |    |    +--- org.jetbrains:annotations:13.0
+     |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+     |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8
+     |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.71 -> 1.5.0 (*)
+     |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.71 -> 1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     |    |    \--- org.jetbrains.kotlin:kotlin-scripting-common:1.5.0 (*)
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+
+kotlinCompilerPluginClasspathTest - Kotlin compiler plugins for compilation 'test' (target  (jvm))
+\--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.5.0
+     +--- org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-common:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+     |    |    |    +--- org.jetbrains:annotations:13.0
+     |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+     |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8
+     |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.71 -> 1.5.0 (*)
+     |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.3.71 -> 1.5.0
+     |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.5.0
+     |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     |    |    \--- org.jetbrains.kotlin:kotlin-scripting-common:1.5.0 (*)
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+     |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+
+kotlinKlibCommonizerClasspath
+\--- org.jetbrains.kotlin:kotlin-klib-commonizer-embeddable:1.5.0
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+     |    +--- org.jetbrains:annotations:13.0
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+     \--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.0
+          +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+          +--- org.jetbrains.kotlin:kotlin-script-runtime:1.5.0
+          +--- org.jetbrains.kotlin:kotlin-reflect:1.5.0
+          |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
+          +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.5.0
+          \--- org.jetbrains.intellij.deps:trove4j:1.0.20181211
+
+kotlinNativeCompilerPluginClasspath
+No dependencies
+
+kotlinScriptDef - Script filename extensions discovery classpath configuration
+No dependencies
+
+kotlinScriptDefExtensions
+No dependencies
+
+runtimeClasspath - Runtime classpath of compilation 'main' (target  (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+|    |    +--- org.jetbrains:annotations:13.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT
++--- io.arrow-kt:arrow-core-data:0.11.0
+|    +--- io.arrow-kt:arrow-annotations:0.11.0
+|    |    +--- io.kindedj:kindedj:1.1.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+\--- io.arrow-kt:arrow-optics:0.11.0
+     +--- io.arrow-kt:arrow-core:0.11.0
+     |    +--- io.arrow-kt:arrow-core-data:0.11.0 (*)
+     |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+     \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+
+runtimeElements - Elements of runtime for main. (n)
+No dependencies
+
+runtimeElements-published (n)
+No dependencies
+
+runtimeOnly - Runtime only dependencies for compilation 'main' (target  (jvm)). (n)
+No dependencies
+
+runtimeOnlyDependenciesMetadata
+No dependencies
+
+sourceArtifacts (n)
+No dependencies
+
+testAnnotationProcessor - Annotation processors and their dependencies for source set 'test'.
+No dependencies
+
+testApi - API dependencies for compilation 'test' (target  (jvm)). (n)
+No dependencies
+
+testApiDependenciesMetadata
+No dependencies
+
+testCompileClasspath - Compile classpath for compilation 'test' (target  (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+|    |    +--- org.jetbrains:annotations:13.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT
++--- io.arrow-kt:arrow-core-data:0.11.0
+|    +--- io.arrow-kt:arrow-annotations:0.11.0
+|    |    +--- io.kindedj:kindedj:1.1.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
++--- io.arrow-kt:arrow-optics:0.11.0
+|    +--- io.arrow-kt:arrow-core:0.11.0
+|    |    +--- io.arrow-kt:arrow-core-data:0.11.0 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
++--- org.junit.jupiter:junit-jupiter:5.7.0
+|    +--- org.junit:junit-bom:5.7.0
+|    |    +--- org.junit.jupiter:junit-jupiter:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-api:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-params:5.7.0 (c)
+|    |    \--- org.junit.platform:junit-platform-commons:1.7.0 (c)
+|    +--- org.junit.jupiter:junit-jupiter-api:5.7.0
+|    |    +--- org.junit:junit-bom:5.7.0 (*)
+|    |    +--- org.apiguardian:apiguardian-api:1.1.0
+|    |    +--- org.opentest4j:opentest4j:1.2.0
+|    |    \--- org.junit.platform:junit-platform-commons:1.7.0
+|    |         +--- org.junit:junit-bom:5.7.0 (*)
+|    |         \--- org.apiguardian:apiguardian-api:1.1.0
+|    \--- org.junit.jupiter:junit-jupiter-params:5.7.0
+|         +--- org.junit:junit-bom:5.7.0 (*)
+|         +--- org.apiguardian:apiguardian-api:1.1.0
+|         \--- org.junit.jupiter:junit-jupiter-api:5.7.0 (*)
+\--- org.assertj:assertj-core:3.17.2
+
+testCompileOnly - Compile only dependencies for compilation 'test' (target  (jvm)). (n)
+No dependencies
+
+testCompileOnlyDependenciesMetadata
+No dependencies
+
+testImplementation - Implementation only dependencies for compilation 'test' (target  (jvm)). (n)
++--- org.junit.jupiter:junit-jupiter:5.7.0 (n)
+\--- org.assertj:assertj-core:3.17.2 (n)
+
+testImplementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+|    |    +--- org.jetbrains:annotations:13.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT
++--- io.arrow-kt:arrow-core-data:0.11.0
+|    +--- io.arrow-kt:arrow-annotations:0.11.0
+|    |    +--- io.kindedj:kindedj:1.1.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
++--- io.arrow-kt:arrow-optics:0.11.0
+|    +--- io.arrow-kt:arrow-core:0.11.0
+|    |    +--- io.arrow-kt:arrow-core-data:0.11.0 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
++--- org.junit.jupiter:junit-jupiter:5.7.0
+|    +--- org.junit:junit-bom:5.7.0
+|    |    +--- org.junit.jupiter:junit-jupiter:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-api:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-params:5.7.0 (c)
+|    |    \--- org.junit.platform:junit-platform-commons:1.7.0 (c)
+|    +--- org.junit.jupiter:junit-jupiter-api:5.7.0
+|    |    +--- org.junit:junit-bom:5.7.0 (*)
+|    |    +--- org.apiguardian:apiguardian-api:1.1.0
+|    |    +--- org.opentest4j:opentest4j:1.2.0
+|    |    \--- org.junit.platform:junit-platform-commons:1.7.0
+|    |         +--- org.junit:junit-bom:5.7.0 (*)
+|    |         \--- org.apiguardian:apiguardian-api:1.1.0
+|    \--- org.junit.jupiter:junit-jupiter-params:5.7.0
+|         +--- org.junit:junit-bom:5.7.0 (*)
+|         +--- org.apiguardian:apiguardian-api:1.1.0
+|         \--- org.junit.jupiter:junit-jupiter-api:5.7.0 (*)
+\--- org.assertj:assertj-core:3.17.2
+
+testKotlinScriptDef - Script filename extensions discovery classpath configuration
+No dependencies
+
+testKotlinScriptDefExtensions
+No dependencies
+
+testRuntimeClasspath - Runtime classpath of compilation 'test' (target  (jvm)).
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0
+|    |    +--- org.jetbrains:annotations:13.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.5.0 (*)
++--- io.arrow-kt:arrow-meta-prelude:1.5.0-SNAPSHOT
++--- io.arrow-kt:arrow-core-data:0.11.0
+|    +--- io.arrow-kt:arrow-annotations:0.11.0
+|    |    +--- io.kindedj:kindedj:1.1.0
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
++--- io.arrow-kt:arrow-optics:0.11.0
+|    +--- io.arrow-kt:arrow-core:0.11.0
+|    |    +--- io.arrow-kt:arrow-core-data:0.11.0 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0 -> 1.5.0 (*)
++--- org.junit.jupiter:junit-jupiter:5.7.0
+|    +--- org.junit:junit-bom:5.7.0
+|    |    +--- org.junit.jupiter:junit-jupiter:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-api:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-engine:5.7.0 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-params:5.7.0 (c)
+|    |    +--- org.junit.platform:junit-platform-commons:1.7.0 (c)
+|    |    \--- org.junit.platform:junit-platform-engine:1.7.0 (c)
+|    +--- org.junit.jupiter:junit-jupiter-api:5.7.0
+|    |    +--- org.junit:junit-bom:5.7.0 (*)
+|    |    +--- org.apiguardian:apiguardian-api:1.1.0
+|    |    +--- org.opentest4j:opentest4j:1.2.0
+|    |    \--- org.junit.platform:junit-platform-commons:1.7.0
+|    |         +--- org.junit:junit-bom:5.7.0 (*)
+|    |         \--- org.apiguardian:apiguardian-api:1.1.0
+|    +--- org.junit.jupiter:junit-jupiter-params:5.7.0
+|    |    +--- org.junit:junit-bom:5.7.0 (*)
+|    |    +--- org.apiguardian:apiguardian-api:1.1.0
+|    |    \--- org.junit.jupiter:junit-jupiter-api:5.7.0 (*)
+|    \--- org.junit.jupiter:junit-jupiter-engine:5.7.0
+|         +--- org.junit:junit-bom:5.7.0 (*)
+|         +--- org.apiguardian:apiguardian-api:1.1.0
+|         +--- org.junit.platform:junit-platform-engine:1.7.0
+|         |    +--- org.junit:junit-bom:5.7.0 (*)
+|         |    +--- org.apiguardian:apiguardian-api:1.1.0
+|         |    +--- org.opentest4j:opentest4j:1.2.0
+|         |    \--- org.junit.platform:junit-platform-commons:1.7.0 (*)
+|         \--- org.junit.jupiter:junit-jupiter-api:5.7.0 (*)
+\--- org.assertj:assertj-core:3.17.2
+
+testRuntimeOnly - Runtime only dependencies for compilation 'test' (target  (jvm)). (n)
+No dependencies
+
+testRuntimeOnlyDependenciesMetadata
+No dependencies
+
+(c) - dependency constraint
+(*) - dependencies omitted (listed previously)
+
+(n) - Not resolved (configuration is not meant to be resolved)
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
