@@ -26,9 +26,15 @@ buildscript {
 plugins {
     id "org.jetbrains.kotlin.jvm"
 
-    // This option will be possible when there is a release version of Arrow Refined Types Gradle Plugin
-    // in Gradle Plugins Portal. Then, "buildscript" and "apply" section won't be necessary.
-    // id "io.arrow-kt.refined-types" version "$ARROW_META_VERSION"
+    // id "org.jetbrains.kotlin.kapt"
 }
 
 apply plugin: "io.arrow-kt.refined-types"
+
+dependencies {
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+ 
+     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
+     implementation "io.arrow-kt:arrow-core:0.13.2"
+     implementation "io.arrow-kt:arrow-fx-coroutines:0.13.2" 
+}
