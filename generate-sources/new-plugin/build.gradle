@@ -30,3 +30,11 @@ compileKotlin {
         jvmTarget = "$JVM_TARGET_VERSION"
     }
 }
+
+jar {
+    from(
+        zipTree(sourceSets.main.compileClasspath.find {
+            it.absolutePath.contains(Paths.get("arrow-kt", "arrow-meta").toString())
+        })
+    )
+}
