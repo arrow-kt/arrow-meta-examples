@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        mavenCentral()
+        maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$KOTLIN_VERSION"
+
+        classpath "io.arrow-kt:gradle-plugin:$ARROW_META_VERSION"
+        classpath "io.arrow-kt:compiler-plugin:$ARROW_META_VERSION"
+    }
+}
+
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "$KOTLIN_VERSION" apply false
+    id "com.github.johnrengelman.shadow" version "$SHADOW_JAR_VERSION" apply false
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+    }
+}

@@ -1,0 +1,38 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+    id "com.github.johnrengelman.shadow"
+    id "kotlinx-serialization"
+}
+
+dependencies {
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+
+    compileOnly "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinx_serialization_runtime_version"
+    compileOnly "org.jetbrains.kotlin:kotlin-reflect:$KOTLIN_VERSION"
+
+    compileOnly project(":example-library")
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.compileOnly]
+}
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": "io.arrowkt.example.inline_serialization.example_application.MainKt"
+        )
+    }
+}
