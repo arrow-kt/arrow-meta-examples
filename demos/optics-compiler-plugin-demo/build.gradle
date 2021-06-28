@@ -45,3 +45,7 @@ test {
         events "passed", "failed", "standardOut", "standardError"
     }
 }
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
