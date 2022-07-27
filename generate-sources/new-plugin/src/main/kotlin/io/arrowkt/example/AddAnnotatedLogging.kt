@@ -22,7 +22,7 @@ val Meta.addAnnotatedLogging: CliPlugin
 
                 // FIXME #58: NoClassDefFound when trying to access via MetaLog::class.qualifiedName
                 return@irFunction if (declaration.hasAnnotation(FqName("io.arrowkt.example.MetaLog"))) {
-                    declaration.body = appendLoggingToBody(pluginContext, declaration)
+                    declaration.body = prependLoggingToBody(pluginContext, declaration)
 
                     declaration
                 } else {
@@ -32,7 +32,7 @@ val Meta.addAnnotatedLogging: CliPlugin
         )
     }
 
-fun appendLoggingToBody(pluginContext: IrPluginContext, declaration: IrFunction): IrBody {
+fun prependLoggingToBody(pluginContext: IrPluginContext, declaration: IrFunction): IrBody {
     return DeclarationIrBuilder(pluginContext, declaration.symbol).irBlockBody {
 
         val referenceClass = pluginContext.referenceClass(FqName("io.arrowkt.example.MetaLogger"))
