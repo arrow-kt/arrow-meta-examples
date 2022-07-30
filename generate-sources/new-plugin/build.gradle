@@ -21,6 +21,8 @@ plugins {
 }
 
 dependencies {
+    implementation project(":new-plugin-runtime")
+
     compileOnly "org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION"
     compileOnly "io.arrow-kt:arrow-meta:$ARROW_META_VERSION"
 }
