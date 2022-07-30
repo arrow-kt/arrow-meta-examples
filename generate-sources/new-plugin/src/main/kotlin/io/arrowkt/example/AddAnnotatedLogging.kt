@@ -15,12 +15,10 @@ import org.jetbrains.kotlin.ir.util.hasAnnotation
 import org.jetbrains.kotlin.ir.util.statements
 import org.jetbrains.kotlin.name.FqName
 
-val Meta.addAnnotatedLogging: CliPlugin
+val Meta.addLoggingToAnnotatedFunctions: CliPlugin
     get() = "Add Logging To Annotated Functions" {
         meta(
             irFunction { declaration ->
-
-                // FIXME #58: NoClassDefFound when trying to access via MetaLog::class.qualifiedName
                 return@irFunction if (declaration.hasAnnotation(FqName("io.arrowkt.example.MetaLog"))) {
                     declaration.body = prependLoggingToBody(pluginContext, declaration)
 
