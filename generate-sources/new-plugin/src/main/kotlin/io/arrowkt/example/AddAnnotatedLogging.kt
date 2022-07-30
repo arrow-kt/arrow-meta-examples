@@ -37,7 +37,7 @@ fun prependLoggingToBody(pluginContext: IrPluginContext, declaration: IrFunction
             ?: throw NoClassDefFoundError("MetaLogger not found")
 
         val interceptionCall = referenceClass.getSimpleFunction("log")
-            ?: throw NoClassDefFoundError("MetaLogger.log() not fround")
+            ?: throw NoClassDefFoundError("MetaLogger.log() not found")
 
         // Inject logging to function top statement(will be called first)
         +irCall(interceptionCall).apply {
