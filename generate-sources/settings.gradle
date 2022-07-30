@@ -1,2 +1,4 @@
 include ':new-plugin'
 include ':use-plugin'
+include 'new-plugin-runtime'
+

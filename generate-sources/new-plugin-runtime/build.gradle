@@ -1,0 +1,15 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+}
+
+group 'io.arrow.example'
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "$JVM_TARGET_VERSION"
+    }
+}
