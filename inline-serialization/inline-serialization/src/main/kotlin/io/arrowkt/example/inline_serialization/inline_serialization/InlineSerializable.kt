@@ -1,0 +1,3 @@
+package io.arrowkt.example.inline_serialization.inline_serialization
+
+annotation class InlineSerializable
